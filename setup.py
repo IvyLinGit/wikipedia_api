@@ -8,7 +8,7 @@ CLASSIFIERS = ["Environment :: Console",
                "Programming Language :: Python",
                "Topic :: Wikipedia API"]
 
-NAME = "Wikipedia API"
+NAME = "wikipedia-api"
 DESCRIPTION = "A library enhance wikipedia RESTful API functionality"
 URL = "https://github.com/IvyLinGit/wikipedia_api"
 AUTHOR = "Weiqing (Ivy) Lin"

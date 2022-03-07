@@ -118,7 +118,7 @@ def split_time_range_for_legacy_api(
     )
 
 
-def rest_api_call(endpoint: str, api_header:dict, parameters: dict):
+def rest_api_call(endpoint: str, api_header: dict, parameters: dict):
     call = requests.get(endpoint.format(**parameters), headers=api_header)
     response = call.json()
     return response

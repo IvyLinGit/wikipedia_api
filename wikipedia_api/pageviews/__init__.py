@@ -7,7 +7,7 @@ from wikipedia_api.pageviews.api_types import (
     PerArticlePageViewRequest,
     TopViewedArticleRequest,
     TopViewedCountryRequest,
-    TopViewedCountryRequest,
+    TopViewedPerCountryRequest,
 )
 from wikipedia_api.pageviews.api_constants import (
     PageViewApiEndPoints,
@@ -26,7 +26,7 @@ __all__ = [
     "PerArticlePageViewRequest",
     "TopViewedArticleRequest",
     "TopViewedCountryRequest",
-    "TopViewedCountryRequest",
+    "TopViewedPerCountryRequest",
     "PageViewApiEndPoints",
     "PageViewApiValidDateRange",
     "WikipediaPageViewApiClient",

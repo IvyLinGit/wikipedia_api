@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-import requests
 import pandas as pd
 from wikipedia_api.pageviews.api_exceptions import InputException
 
@@ -20,7 +19,6 @@ from wikipedia_api.pageviews.api_constants import (
 )
 from wikipedia_api.pageviews.api_utils import (
     parse_start_end_time,
-    parse_time_parameter,
     rest_api_call,
     split_time_range_for_legacy_api,
     translate_access_method_to_str,
@@ -31,7 +29,7 @@ from wikipedia_api.pageviews.api_utils import (
 
 class WikipediaPageViewApiClient:
     """
-    Wikipedia Page View API client wrapper, 
+    Wikipedia Page View API client wrapper,
     Save common initialization parameter eg project or api header to avoid passing for 
     each api call, use strong typed parameter to avoid error-prone str typed parameter
     for access or agent or granularity type, do basic validation on user input such as 
@@ -142,7 +140,7 @@ class WikipediaPageViewApiClient:
                 )
 
         return pd.concat([legacy_df, pageview_df], ignore_index=True)
-    
+
     def get_top_view_per_country(self, request: TopViewedPerCountryRequest):
         """
         Lists the 1000 most viewed articles for a given country and date, across all projects. 
@@ -322,7 +320,7 @@ class WikipediaPageViewApiClient:
             PageViewApiEndPoints.PER_ARTICLE_PAGEVIEWS, self._api_header, params
         )
         return pd.DataFrame.from_dict(pageview_data["items"])
-     
+
     def get_top_pageviews(self, request: TopViewedArticleRequest) -> pd.DataFrame:
         """
         Lists the 1000 most viewed articles timespan (month or day), support filter by access method

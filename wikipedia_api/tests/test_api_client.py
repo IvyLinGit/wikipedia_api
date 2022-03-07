@@ -237,6 +237,12 @@ class WikipediaPageViewApiClientTest(unittest.TestCase):
         )
         with self.assertRaises(InputException):
             client.get_top_pageviews(request)
+            
+        request = TopViewedArticleRequest(
+            access=AccessMethod.ALL, year=2020, month=13, day=1,
+        )
+        with self.assertRaises(InputException):
+            client.get_top_pageviews(request)
 
         request = TopViewedArticleRequest(
             access=AccessMethod.ALL, year=2020, month=1, day=-1,

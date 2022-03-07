@@ -247,7 +247,6 @@ class WikipediaPageViewApiClient:
                     break
 
             df = pd.concat(dfs, ignore_index=True)
-            print(f"df = {df}")
             # group by month to find top 1000 article per month
             aggregated_df = df.groupby(
                 ["country", "access", "year", "month", "article", "project"]
